@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_many :purchases
+- has_many :purchase
 
 ## items テーブル
 
@@ -35,8 +35,8 @@
 
 ### Association
 
-- belong_to :users
-- has_one :purchases
+- belongs_to :users
+- has_one :purchase
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :postage_payer
@@ -55,13 +55,14 @@
 | building_name    | string     |                                |
 | phone_name       | string     | null: false, uniqueness:true   |
 | purchase         | references | null: false, foreign_key:true  |
+| house_number     | integer    | null: false,                   |
 
 ### Association
 
-- belong_to :purchases
+- belongs_to :purchase
 - belongs_to_active_hash :prefecture
 
-## purchases テーブル
+## purchase テーブル
 
 | Column        | Type          | Options                       |
 | ------------- | ------------- | ----------------------------- |
@@ -71,5 +72,5 @@
 ### Association
 
 - has_one :addresses
-- belong_to :users
-- belong_to :items
+- belongs_to :users
+- belongs_to :items
