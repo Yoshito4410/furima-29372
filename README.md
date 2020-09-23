@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- belongs_to :addresses
+- belong_to :addresses
 - has_many :purchases
 
 ## items テーブル
@@ -36,9 +36,9 @@
 
 ### Association
 
-- belongs_to :users
-- belongs_to :image
-- belongs_to :purchases
+- belong_to :users
+- belong_to :image
+- has_one :purchases
 
 ## image テーブル
 
@@ -49,7 +49,7 @@
 
 ### Association
 
-- belongs_to :user
+- belong_to :user
 
 ## addresses テーブル
 
@@ -64,8 +64,9 @@
 
 ### Association
 
-- belongs_to :users
-- belongs_to :purchases
+- belong_to :items
+- belong_to :users
+- belong_to :purchases
 
 ## purchases テーブル
 
@@ -73,3 +74,7 @@
 | ------------- | ------------- | ----------------------------- |
 | item          | references    | null: false, foreign_key:true |
 | user          | references    | null: false, foreign_key:true |
+
+### Association
+
+- has_one :addresses
